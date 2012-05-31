@@ -81,7 +81,7 @@ h2{
 }
 
 #intro{
-	background:url(images/firstBG.jpg) 50% -75px no-repeat fixed;
+	background:url(../images/firstBG.jpg) 50% -75px no-repeat fixed;
 	color: white;
 	height: 600px;
 	margin: 0 auto;
@@ -89,7 +89,7 @@ h2{
 }
 
 #second{
-	background: url(images/secondBG.jpg) 50% 0 no-repeat fixed;
+	background: url(../images/secondBG.jpg) 50% 0 no-repeat fixed;
 	color: white;
 	height: 1300px;
 	margin: 0 auto;
@@ -98,7 +98,7 @@ h2{
 }
 
 #second .bg{
-	background: url(images/trainers.png) 50% 0 no-repeat fixed;
+	background: url(../images/trainers.png) 50% 0 no-repeat fixed;
 	height: 1300px;
 	margin: 0 auto;
 	padding: 0;
@@ -108,7 +108,7 @@ h2{
 }
 
 #third{
-	background: url(images/thirdBG.jpg) 50% 0 no-repeat fixed;
+	background: url(../images/thirdBG.jpg) 50% 0 no-repeat fixed;
 	color: white;
 	height: 650px;
 	padding: 100px 0 0 0;	
