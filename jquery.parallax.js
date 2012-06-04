@@ -1,6 +1,8 @@
 /**
 	Plugin: jQuery Parallax
 	Author: Allan Lei
+	Version: 1.0.0
+	Date: June 4, 2012
 	Forked from https://github.com/IanLunn/jQuery-Parallax
 	
 	Licensed under the MIT:
