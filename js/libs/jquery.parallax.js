@@ -2,6 +2,9 @@
 	Plugin: jQuery Parallax
 	Author: Allan Lei
 	Forked from https://github.com/IanLunn/jQuery-Parallax
+	
+	Licensed under the MIT:
+	http://www.opensource.org/licenses/mit-license.php
 **/
 
 (function($){
