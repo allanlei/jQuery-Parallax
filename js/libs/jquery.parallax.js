@@ -7,24 +7,29 @@ Author: Allan Lei
 	$.fn.parallax = function(layers, options){
 		return this.each(function(){
 			var settings = $.extend({}, {
-				parallaxClass: "parallax",
-				layerClass: "layer",
+				parallaxClass: null,
+				layerClass: null,
+				offset: true,
 				animation: {
-					duration: 150, 
+					duration: 50, 
 					easing: "linear",
 					queue: false
 				}
 			}, options);
-			var $parallax = $(this).addClass(settings.parallaxClass);
+			
+			var $parallax = $(this).addClass(settings.parallaxClass).data({
+				"layers": []
+			});
 			
 			$.each(layers, function(selector, layerOptions){
 				var layerSettings = $.extend({}, {
 					xFn: null,
 					yFn: null,
 				}, layerOptions);
-				$parallax.find(selector).addClass(settings.layerClass);
+				var $layer = $parallax.find(selector).addClass(settings.layerClass);
+				$parallax.data("layers").push($layer);
 				
-				$parallax.on("update.parallax", selector, function(){
+				$parallax.on("update.parallax.layer", selector, function(){
 					var $layer = $(this);
 					var css = {};
 					var viewport = {
@@ -50,9 +55,11 @@ Author: Allan Lei
 				});
 			});
 			
-			//Delagate from $parallax -> all registered layers
-			$parallax.on("updates.parallax", function(){
-				$(this).find("." + settings.layerClass).trigger("update.parallax");
+			$parallax.on("update.parallax", function(){
+				$.each($(this).data("layers"), function(index, $layer){
+					$layer.trigger("update.parallax.layer");
+				});
+				//$(this).find("." + settings.layerClass).trigger("update.parallax.layer");
 			});
 		});
     };
