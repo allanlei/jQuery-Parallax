@@ -8,6 +8,7 @@
 		<script type="text/javascript" src="js/libs/jquery.parallax.js"></script>
 		<script type="text/javascript" src="js/libs/jquery.localscroll-1.2.7-min.js"></script>
 		<script type="text/javascript" src="js/libs/jquery.scrollTo-1.4.2-min.js"></script>
+		<script type="text/javascript" src="js/libs/jquery.inview.js"></script>
 		<script type="text/javascript" src="js/script.js"></script>
 		
 		<script type="text/javascript">
@@ -50,11 +51,16 @@
 					}
 				}
 			});
+			
+			$("#parallax1, #parallax2, #parallax3, #parallax4").on("inview", function(event, isInView){
+				$(this).toggleClass("inview", isInView);
+			});
 
 			$(window).on("scroll resize", function(){
 				var pos = $(window).scrollTop();
 				$("#pixels").html(pos);
-				$("#parallax1, #parallax2, #parallax3").trigger("update.parallax");
+				
+				$("#parallax1, #parallax2, #parallax3").filter(".inview").trigger("update.parallax");
 			}).resize();
 		});
 		</script>

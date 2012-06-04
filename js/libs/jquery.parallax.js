@@ -1,7 +1,8 @@
-/*
-Plugin: jQuery Parallax
-Author: Allan Lei
-*/
+/**
+	Plugin: jQuery Parallax
+	Author: Allan Lei
+	Forked from https://github.com/IanLunn/jQuery-Parallax
+**/
 
 (function($){
 	$.fn.parallax = function(layers, options){
@@ -59,7 +60,6 @@ Author: Allan Lei
 				$.each($(this).data("layers"), function(index, $layer){
 					$layer.trigger("update.parallax.layer");
 				});
-				//$(this).find("." + settings.layerClass).trigger("update.parallax.layer");
 			});
 		});
     };
