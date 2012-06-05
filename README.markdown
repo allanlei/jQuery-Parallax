@@ -16,7 +16,7 @@ Updates
 
 Requirements
 ------------
-
+Support for background-position-xy
 
 Usage
 -----
